@@ -1,0 +1,40 @@
+---
+title: "Pitch app"
+date: 25 August 2018
+author: Bas Millaard
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Introduction
+
+This document supports the app created for the course project Shiny application and Reproducible Pitch. 
+
+This application is built to calculate your estimated running time based on a historically ran distance and time. To get the most exact timing the longer the run is the better the estimate will be. 
+
+
+
+
+## Data used
+
+The data used in this app will be manually put in by the user. 
+
+Based on this data an estimation will be made of the approximate marathon time
+
+## Calculation
+
+The below calculation is done in the file. Based on the time and distance entered by the user a result will come out to show the time in hours. 
+
+output$result = renderText(((input$slider_mins*(42/input$distance))*1.1)/60)
+
+
+## Location of the files
+
+The application is build using Shiny package and the source code is in 2 files:
+- `ui.R`
+- `server.R`
+
+Both files can be found on Github: (https://github.com/bmillaard/Shiny-app-and-repr-pitch/tree/master)
